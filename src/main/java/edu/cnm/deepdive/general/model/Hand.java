@@ -43,7 +43,7 @@ public class Hand<T> implements Iterable<T> {
     return elements.remove(t);
   }
 
-  public boolean remove(Collection<T> coll) {
+  public boolean removeAll(Collection<T> coll) {
     return elements.removeAll(coll);
   }
 
@@ -89,9 +89,9 @@ public class Hand<T> implements Iterable<T> {
     boolean equal = false;
     if (this == obj) {
       equal = true;
-    } else if (obj instanceof  Hand) {
-      //noinspection unchecked
-      equal = elements.equals(((Hand<T>)obj).elements);
+    } else if (obj instanceof Hand) {
+      //noinspection rawtypes
+      equal = elements.equals(((Hand) obj).elements);
     }
     return equal;
   }
